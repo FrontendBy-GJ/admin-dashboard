@@ -1,14 +1,79 @@
+body {
+  font-family: Verdana, Arial, system-ui, sans-serif;
+}
 .container {
   display: grid;
   grid-template-areas:
     'sidebar user user'
     'sidebar main info-sidebar';
-  grid-template-columns: 1fr 2fr 1fr;
 }
 
 header {
   grid-area: user;
+  padding: 15px 30px;
+  background-color: #fff;
 }
+.search {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.search-bar {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+}
+input[type='search'] {
+  background-color: #e1e7ef;
+  border: none;
+  border-radius: 20px;
+  width: clamp(200px, 40vw, 100%);
+  height: 25px;
+  padding: 4px 12px;
+}
+
+.user {
+  width: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  justify-self: end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.account {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 70px;
+  align-items: end;
+}
+.profile {
+  display: grid;
+  grid-template-columns: 50px max-content;
+}
+.user-handle {
+  display: grid;
+  align-content: center;
+  font-weight: bold;
+  line-height: 1.3;
+}
+.user-handle div:nth-child(1) {
+  font-size: 0.8rem;
+}
+.user-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  justify-self: end;
+  gap: 10px;
+}
+.user-actions > button {
+  color: white;
+  background-color: #1991d2;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
 aside {
   grid-area: sidebar;
 }
