@@ -1,5 +1,6 @@
 body {
   font-family: Verdana, Arial, system-ui, sans-serif;
+  margin: 0;
 }
 .container {
   display: grid;
@@ -8,6 +9,7 @@ body {
     'sidebar main info-sidebar';
 }
 
+/* header */
 header {
   grid-area: user;
   padding: 15px 30px;
@@ -66,7 +68,7 @@ input[type='search'] {
   justify-self: end;
   gap: 10px;
 }
-.user-actions > button {
+.user-actions button {
   color: white;
   background-color: #1991d2;
   border: none;
@@ -74,8 +76,42 @@ input[type='search'] {
   padding: 8px 20px;
 }
 
-aside {
+/* aside left */
+aside#dashboard {
   grid-area: sidebar;
+  background-color: #1991d2;
+  color: white;
+  padding: 10px 15px;
+
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  gap: 30px;
+}
+#dashboard .heading {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-self: start;
+  justify-self: center;
+  align-items: center;
+  gap: 10px;
+}
+#dashboard .heading div {
+  font-size: 1.2rem;
+}
+#dashboard ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+#dashboard li {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  gap: 10px;
 }
 main.grid-container {
   grid-area: main;
