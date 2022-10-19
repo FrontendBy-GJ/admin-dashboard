@@ -48,6 +48,24 @@ input[type='search'] {
   font-weight: bold;
   font-size: 0.9rem;
 }
+.user > * {
+  cursor: pointer;
+}
+.user box-icon[name='bell'] {
+  position: relative;
+}
+.user box-icon[name='bell']:hover::after {
+  position: absolute;
+  content: 'Notifications';
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: normal;
+  background-color: orange;
+  color: #fff;
+  padding: 2px 8px;
+  top: -10px;
+  left: -100px;
+}
 
 .account {
   display: grid;
@@ -80,6 +98,11 @@ input[type='search'] {
   border: none;
   border-radius: 20px;
   padding: 8px 20px;
+  cursor: pointer;
+}
+.user-actions button:active {
+  background-color: #1991d299;
+  transition: all 0.1s ease-in-out;
 }
 
 /* aside left */
@@ -122,6 +145,12 @@ aside#dashboard {
   align-items: center;
   gap: 10px;
 }
+#dashboard ul li > * {
+  cursor: pointer;
+}
+#dashboard ul li > div:hover {
+  border-bottom: 1px solid;
+}
 
 /* main */
 main {
@@ -156,12 +185,48 @@ main {
   align-items: start;
   align-content: space-between;
   line-height: 1.3;
+
+  box-shadow: 1px 3px 8px #666;
 }
 .card .actions {
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: end;
   gap: 20px;
+}
+.card .actions > * {
+  cursor: pointer;
+}
+.actions > box-icon[name='star'],
+.actions > box-icon[name='window'],
+.actions > box-icon[name='share-alt'] {
+  position: relative;
+}
+.actions > box-icon[name='star']::after,
+.actions > box-icon[name='window']::after,
+.actions > box-icon[name='share-alt']::after {
+  position: absolute;
+  width: fit-content;
+  background-color: orange;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 1px 6px;
+}
+
+.actions > box-icon[name='star']:hover::after {
+  content: 'Favourite';
+  top: -22px;
+  left: -20px;
+}
+.actions box-icon[name='window']:hover::after {
+  content: 'View';
+  top: -22px;
+  left: -10px;
+}
+.actions > box-icon[name='share-alt']:hover::after {
+  content: 'Share';
+  top: -22px;
+  left: -10px;
 }
 
 /* announcements | trending */
@@ -175,6 +240,7 @@ main {
   background-color: #fff;
   border-radius: 10px;
   padding: 30px;
+  box-shadow: 1px 3px 8px #666;
 }
 .announcements {
   display: grid;
@@ -202,4 +268,11 @@ main {
 }
 .trending li > div p:last-child {
   color: #636363;
+}
+.trending li > box-icon,
+.trending li div > p:first-child {
+  cursor: pointer;
+}
+.trending div > p:first-child {
+  width: fit-content;
 }
